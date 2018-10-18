@@ -8,7 +8,7 @@ public class Menu {
     }
 
     public void displayMenu(){
-        System.out.println("Please select one of the following options:");
+        System.out.println("\nPlease select one of the following options:");
         System.out.println("\n1: Calculate grade from percentage");
         System.out.println("2: Option Two");
         System.out.println("3: Option Three");
@@ -28,11 +28,17 @@ public class Menu {
                 case "2":
                     boolean validInput = false;
                     while (!validInput) {
+                        Scanner intInputScanner = new Scanner(System.in);
+
                         System.out.println("Enter an integer between 1 and 99:");
-                        int lowerBound = Integer.parseInt(choiceScanner.nextLine());
+                        int lowerBound = Integer.parseInt(intInputScanner.nextLine());
                         System.out.println("Enter an integer between " + (lowerBound + 1) + " and 100:");
-                        int upperBound = Integer.parseInt(choiceScanner.nextLine());
+                        int upperBound = Integer.parseInt(intInputScanner.nextLine());
+
                         validInput = Choice.numberInformation(lowerBound, upperBound);
+                        if (!validInput){
+                            System.out.println("That input is invalid, please try again.");
+                        }
                     }
                     break;
                 case "3":

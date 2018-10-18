@@ -31,25 +31,26 @@ public class Choice {
         }
     }
 
-    public static boolean numberInformation(int upperBound, int lowerBound){
+    public static boolean numberInformation(int lowerBound, int upperBound){
         boolean validInput = false;
         if (upperBound > lowerBound && upperBound <= 100 && lowerBound >= 1){
             validInput = true;
 
             // headers
-            System.out.println("Value");
-            System.out.println("\tSquare");
-            System.out.println("\tCube");
-            System.out.println("\tSquare Root");
+            System.out.print("Value");
+            System.out.print("\tSquare");
+            System.out.print("\tCube");
+            System.out.print("\tSquare Root");
 
             int counter = lowerBound;
 
             while (counter <= upperBound){
                 // information
-                System.out.println(counter);
-                System.out.println("\t" + counter*counter);
-                System.out.println("\t" + counter*counter*counter);
-                System.out.println("\t" + Math.sqrt(counter));
+                System.out.print("\n" + counter);
+                System.out.print("\t\t" + counter*counter);
+                System.out.print("\t\t" + (counter*counter)*counter);
+                System.out.printf("\t\t%.2f", Math.sqrt(counter));
+                counter += 1;
             }
         }
         return validInput;
