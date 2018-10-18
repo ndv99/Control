@@ -55,20 +55,22 @@ public class Choice {
         return validInput;
     }
 
-    public static void fourNumbersInformation(){
+    public static void numbersStatistics(){
         int total = 0;
         float average = 0;
         int min = 0;
         int max = 0;
 
+        boolean finished = false;
+
         int count = 0;
         Scanner inputScanner = new Scanner(System.in);
-        while (count <4){
-            System.out.println("Enter an integer, or enter d if you are finished:");
+        while (!finished){
+            System.out.println("Enter an integer, or enter -1 if you are finished:");
             String userInput = inputScanner.nextLine();
-            if (userInput.equals("d")){
+            if (userInput.equals("-1")){
                 if (count > 0) {
-                    count = 4;
+                    finished = true;
                 } else {
                     System.out.println("Please enter a number first.");
                 }
