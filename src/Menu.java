@@ -23,7 +23,8 @@ public class Menu {
             String userChoice = choiceScanner.nextLine();
             switch (userChoice) {
                 case "1":
-                    Choice.calculateGrade();
+                    int markInt = Choice.checkPercentage();
+                    Choice.calculateGrade(markInt);
                     break;
                 case "2":
                     boolean validInput = false;
