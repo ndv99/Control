@@ -9,7 +9,7 @@ public class Menu {
 
     public void displayMenu(){
         System.out.println("Please select one of the following options:");
-        System.out.println("1: Option One");
+        System.out.println("\n1: Calculate grade from percentage");
         System.out.println("2: Option Two");
         System.out.println("3: Option Three");
         System.out.println("0: Exit");
@@ -17,14 +17,13 @@ public class Menu {
 
     public void processUserChoices(){
         boolean finished = false;
-
+        Scanner choiceScanner = new Scanner(System.in);
         while(!finished) {
-            Scanner choiceScanner = new Scanner(System.in);
             displayMenu();
             String userChoice = choiceScanner.nextLine();
             switch (userChoice) {
                 case "1":
-                    Choice.choice1();
+                    Choice.calculateGrade();
                     break;
                 case "2":
                     Choice.choice2();
