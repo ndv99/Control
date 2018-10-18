@@ -1,3 +1,5 @@
+import jdk.nashorn.internal.runtime.regexp.joni.exception.ValueException;
+
 import java.util.Scanner;
 
 public class Choice {
@@ -55,19 +57,46 @@ public class Choice {
 
     public static void fourNumbersInformation(){
         int total = 0;
-        int average = 0;
+        float average = 0;
         int min = 0;
         int max = 0;
 
         int count = 0;
         Scanner inputScanner = new Scanner(System.in);
         while (count <4){
-            System.out.println("Enter an interger, or enter d if you are finished:");
+            System.out.println("Enter an integer, or enter d if you are finished:");
             String userInput = inputScanner.nextLine();
             if (userInput.equals("d")){
-                count = 4;
+                if (count > 0) {
+                    count = 4;
+                } else {
+                    System.out.println("Please enter a number first.");
+                }
+            } else {
+                try{
+                    int number = Integer.parseInt(userInput);
+                    count += 1;
+                    total += number;
+                    average = (average*(count - 1) + number)/count;
+                    if (count > 1){
+                        if (number > max){
+                            max = number;
+                        } else if (number < min){
+                            min = number;
+                        }
+                    } else {
+                        max = number;
+                        min = number;
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("That is not an integer. Please enter an integer.");
+                }
             }
         }
+        System.out.println("Total: " + total);
+        System.out.printf("Average: %.2f", average);
+        System.out.println("\nMinimum value: " + min);
+        System.out.println("Maximum value: " + max);
     }
 
     public static void exit(){

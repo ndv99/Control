@@ -10,8 +10,8 @@ public class Menu {
     public void displayMenu(){
         System.out.println("\nPlease select one of the following options:");
         System.out.println("\n1: Calculate grade from percentage");
-        System.out.println("2: Number tool (Square, Cube, Root");
-        System.out.println("3: Option Three");
+        System.out.println("2: Number tool (Square, Cube, Root)");
+        System.out.println("3: Four numbers statistics");
         System.out.println("0: Exit");
     }
 
