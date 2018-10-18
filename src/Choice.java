@@ -42,15 +42,12 @@ public class Choice {
             System.out.print("\tCube");
             System.out.print("\tSquare Root");
 
-            int counter = lowerBound;
-
-            while (counter <= upperBound){
+            for (int i = lowerBound, j = upperBound; i<=j; i++){
                 // information
-                System.out.print("\n" + counter);
-                System.out.print("\t\t" + counter*counter);
-                System.out.print("\t\t" + (counter*counter)*counter);
-                System.out.printf("\t\t%.2f", Math.sqrt(counter));
-                counter += 1;
+                System.out.print("\n" + i);
+                System.out.print("\t\t" + i*i);
+                System.out.print("\t\t" + (i*i)*i);
+                System.out.printf("\t\t%.2f", Math.sqrt(i));
             }
         }
         return validInput;
