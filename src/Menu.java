@@ -1,28 +1,60 @@
 import java.util.Scanner;
 
+//TODO: javadocs and other commenting
+
 public class Menu {
 
-    public void displayMenu(){
-        System.out.println("Please select one of the following options:");
-        System.out.println("1: Option One");
-        System.out.println("2: Option Two");
-        System.out.println("3: Option Three");
+    public static void main(String[] args){
+        Menu menu = new Menu();
+        menu.processUserChoices();
+    }
+
+    private void displayMenu(){
+        System.out.println("\nPlease select one of the following options:");
+        System.out.println("\n1: Calculate grade from percentage");
+        System.out.println("2: Number tool (Square, Cube, Root)");
+        System.out.println("3: Numbers statistics");
         System.out.println("0: Exit");
     }
 
-    public void processUserChoices(){
-        Scanner userChoice = new Scanner(System.in);
-        displayMenu();
-        if(userChoice.equals("1")){
-            Choice.choice1();
-        } else if(userChoice.equals("2")){
-            Choice.choice2();
-        } else if(userChoice.equals("3")){
-            Choice.choice3();
-        } else if(userChoice.equals("")){
-            Choice.exit();
-        } else {
-            System.out.println("That choice was shite, try again ya dumb cunt");
+    private void processUserChoices(){
+        boolean finished = false;
+        Scanner choiceScanner = new Scanner(System.in);
+        while(!finished) {
+            displayMenu();
+            String userChoice = choiceScanner.nextLine();
+            switch (userChoice) {
+                case "1":
+                    int markInt = Choice.checkPercentage();
+                    Choice.calculateGrade(markInt);
+                    break;
+                case "2":
+                    boolean validInput = false;
+                    while (!validInput) {
+                        Scanner intInputScanner = new Scanner(System.in);
+
+                        System.out.println("Enter an integer between 1 and 99:");
+                        int lowerBound = Integer.parseInt(intInputScanner.nextLine());
+                        System.out.println("Enter an integer between " + (lowerBound + 1) + " and 100:");
+                        int upperBound = Integer.parseInt(intInputScanner.nextLine());
+
+                        validInput = Choice.numberRangeInformation(lowerBound, upperBound);
+                        if (!validInput){
+                            System.out.println("That input is invalid, please try again.");
+                        }
+                    }
+                    break;
+                case "3":
+                    Choice.numbersStatistics();
+                    break;
+                case "0":
+                    Choice.exit();
+                    finished = true;
+                    break;
+                default:
+                    System.out.println("That input was invalid, please try again.");
+                    break;
+            }
         }
     }
 }
