@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+//TODO: javadocs and other commenting
+
 public class Menu {
 
     public static void main(String[] args){
