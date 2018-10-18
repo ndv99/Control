@@ -26,7 +26,14 @@ public class Menu {
                     Choice.calculateGrade();
                     break;
                 case "2":
-                    Choice.choice2();
+                    boolean validInput = false;
+                    while (!validInput) {
+                        System.out.println("Enter an integer between 1 and 99:");
+                        int lowerBound = Integer.parseInt(choiceScanner.nextLine());
+                        System.out.println("Enter an integer between " + (lowerBound + 1) + " and 100:");
+                        int upperBound = Integer.parseInt(choiceScanner.nextLine());
+                        validInput = Choice.numberInformation(lowerBound, upperBound);
+                    }
                     break;
                 case "3":
                     Choice.choice3();

@@ -31,8 +31,28 @@ public class Choice {
         }
     }
 
-    public static void choice2(){
-        System.out.println("Method choice two exectuted.");
+    public static boolean numberInformation(int upperBound, int lowerBound){
+        boolean validInput = false;
+        if (upperBound > lowerBound && upperBound <= 100 && lowerBound >= 1){
+            validInput = true;
+
+            // headers
+            System.out.println("Value");
+            System.out.println("\tSquare");
+            System.out.println("\tCube");
+            System.out.println("\tSquare Root");
+
+            int counter = lowerBound;
+
+            while (counter <= upperBound){
+                // information
+                System.out.println(counter);
+                System.out.println("\t" + counter*counter);
+                System.out.println("\t" + counter*counter*counter);
+                System.out.println("\t" + Math.sqrt(counter));
+            }
+        }
+        return validInput;
     }
 
     public static void choice3(){
