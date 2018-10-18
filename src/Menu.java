@@ -37,7 +37,7 @@ public class Menu {
                     finished = true;
                     break;
                 default:
-                    System.out.println("That choice was shite, try again ya dumb cunt");
+                    System.out.println("That input was invalid, please try again.");
                     break;
             }
         }
