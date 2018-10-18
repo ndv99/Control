@@ -4,12 +4,12 @@ public class Choice {
 
     public static void calculateGrade(){
         Scanner markScanner = new Scanner(System.in);
-        System.out.println("Please enter your mark (percentage): ");
-        String mark = markScanner.nextLine();
-        int markInt = Integer.parseInt(mark);
 
         boolean validInput = false;
         while (!validInput) {
+            System.out.println("Please enter your mark (percentage): ");
+            String mark = markScanner.nextLine();
+            int markInt = Integer.parseInt(mark);
             if (markInt > 69 && markInt <= 100) {
                 System.out.println("You got an A.");
                 validInput = true;
