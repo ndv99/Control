@@ -2,6 +2,11 @@ import java.util.Scanner;
 
 public class Menu {
 
+    public static void main(String[] args){
+        Menu menu = new Menu();
+        menu.processUserChoices();
+    }
+
     public void displayMenu(){
         System.out.println("Please select one of the following options:");
         System.out.println("1: Option One");
@@ -19,7 +24,7 @@ public class Menu {
             Choice.choice2();
         } else if(userChoice.equals("3")){
             Choice.choice3();
-        } else if(userChoice.equals("")){
+        } else if(userChoice.equals("0")){
             Choice.exit();
         } else {
             System.out.println("That choice was shite, try again ya dumb cunt");
