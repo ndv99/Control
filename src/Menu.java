@@ -16,18 +16,30 @@ public class Menu {
     }
 
     public void processUserChoices(){
-        Scanner userChoice = new Scanner(System.in);
-        displayMenu();
-        if(userChoice.equals("1")){
-            Choice.choice1();
-        } else if(userChoice.equals("2")){
-            Choice.choice2();
-        } else if(userChoice.equals("3")){
-            Choice.choice3();
-        } else if(userChoice.equals("0")){
-            Choice.exit();
-        } else {
-            System.out.println("That choice was shite, try again ya dumb cunt");
+        boolean finished = false;
+
+        while(!finished) {
+            Scanner choiceScanner = new Scanner(System.in);
+            displayMenu();
+            String userChoice = choiceScanner.nextLine();
+            switch (userChoice) {
+                case "1":
+                    Choice.choice1();
+                    break;
+                case "2":
+                    Choice.choice2();
+                    break;
+                case "3":
+                    Choice.choice3();
+                    break;
+                case "0":
+                    Choice.exit();
+                    finished = true;
+                    break;
+                default:
+                    System.out.println("That choice was shite, try again ya dumb cunt");
+                    break;
+            }
         }
     }
 }

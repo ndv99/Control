@@ -14,6 +14,6 @@ public class Choice {
 
     public static void exit(){
         System.out.println("Goodbye.");
-        System.exit(1);
+        System.exit(0);
     }
 }
