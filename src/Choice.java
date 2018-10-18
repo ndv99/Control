@@ -1,22 +1,22 @@
 import java.util.Scanner;
 
-public class Choice {
+class Choice {
 
-    public static void calculateGrade(int markInt){
+    static void calculateGrade(int markInt){
         if (markInt > 69) {
             System.out.println("You got an A.");
-        } else if (markInt > 59 && markInt <= 69) {
+        } else if (markInt > 59) {
             System.out.println("You got a B.");
-        } else if (markInt > 49 && markInt <= 59) {
+        } else if (markInt > 49) {
             System.out.println("You got a C.");
-        } else if (markInt > 39 && markInt <= 49) {
+        } else if (markInt > 39) {
             System.out.println("You got a D.");
-        } else if (markInt < 40) {
+        } else {
             System.out.println("You got an E.");
         }
     }
 
-    public static boolean numberRangeInformation(int lowerBound, int upperBound){
+    static boolean numberRangeInformation(int lowerBound, int upperBound){
         boolean validInput = false;
         if (upperBound > lowerBound && upperBound <= 100 && lowerBound >= 1){
             validInput = true;
@@ -27,7 +27,7 @@ public class Choice {
             System.out.print("\tCube");
             System.out.print("\tSquare Root");
 
-            for (int i = lowerBound, j = upperBound; i<=j; i++){
+            for (int i = lowerBound; i<= upperBound; i++){
                 // information
                 System.out.print("\n" + i);
                 System.out.print("\t\t" + i*i);
@@ -38,7 +38,7 @@ public class Choice {
         return validInput;
     }
 
-    public static void numbersStatistics(){
+    static void numbersStatistics(){
         int total = 0;
         float average = 0;
         int min = 0;
@@ -84,7 +84,7 @@ public class Choice {
         System.out.println("Maximum value: " + max);
     }
 
-    public static int checkPercentage(){
+    static int checkPercentage(){
 
         Scanner markScanner = new Scanner(System.in);
         boolean valid = false;
@@ -103,11 +103,13 @@ public class Choice {
             } catch(NumberFormatException e){
                 System.out.println("That is not valid. Please enter your mark (percentage):");
             }
-        } while (!valid);
+        } while (!valid); // IntelliJ says that "Condition '!valid' is always true.
+                          // It is not always true.
+                          // I've tested this and it works perfectly, so as far as I care, it works.
         return markInt;
     }
 
-    public static void exit(){
+    static void exit(){
         System.out.println("Goodbye.");
         System.exit(0);
     }

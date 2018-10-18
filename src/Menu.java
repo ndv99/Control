@@ -7,7 +7,7 @@ public class Menu {
         menu.processUserChoices();
     }
 
-    public void displayMenu(){
+    private void displayMenu(){
         System.out.println("\nPlease select one of the following options:");
         System.out.println("\n1: Calculate grade from percentage");
         System.out.println("2: Number tool (Square, Cube, Root)");
@@ -15,7 +15,7 @@ public class Menu {
         System.out.println("0: Exit");
     }
 
-    public void processUserChoices(){
+    private void processUserChoices(){
         boolean finished = false;
         Scanner choiceScanner = new Scanner(System.in);
         while(!finished) {
