@@ -31,7 +31,7 @@ public class Choice {
         }
     }
 
-    public static boolean numberInformation(int lowerBound, int upperBound){
+    public static boolean numberRangeInformation(int lowerBound, int upperBound){
         boolean validInput = false;
         if (upperBound > lowerBound && upperBound <= 100 && lowerBound >= 1){
             validInput = true;
@@ -53,8 +53,21 @@ public class Choice {
         return validInput;
     }
 
-    public static void choice3(){
-        System.out.println("Method choice three exectuted.");
+    public static void fourNumbersInformation(){
+        int total = 0;
+        int average = 0;
+        int min = 0;
+        int max = 0;
+
+        int count = 0;
+        Scanner inputScanner = new Scanner(System.in);
+        while (count <4){
+            System.out.println("Enter an interger, or enter d if you are finished:");
+            String userInput = inputScanner.nextLine();
+            if (userInput.equals("d")){
+                count = 4;
+            }
+        }
     }
 
     public static void exit(){

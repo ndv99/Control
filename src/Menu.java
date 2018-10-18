@@ -35,14 +35,14 @@ public class Menu {
                         System.out.println("Enter an integer between " + (lowerBound + 1) + " and 100:");
                         int upperBound = Integer.parseInt(intInputScanner.nextLine());
 
-                        validInput = Choice.numberInformation(lowerBound, upperBound);
+                        validInput = Choice.numberRangeInformation(lowerBound, upperBound);
                         if (!validInput){
                             System.out.println("That input is invalid, please try again.");
                         }
                     }
                     break;
                 case "3":
-                    Choice.choice3();
+                    Choice.fourNumbersInformation();
                     break;
                 case "0":
                     Choice.exit();
