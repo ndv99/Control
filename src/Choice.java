@@ -104,10 +104,12 @@ class Choice {
                     } else {
                         System.out.println("That is not valid. Please enter your mark (percentage):");
                         failedAttempts += 1;
+                        markInt = -1;
                     }
                 } catch(NumberFormatException e) {
                     System.out.println("That is not valid. Please enter your mark (percentage):");
                     failedAttempts += 1;
+                    markInt = -1;
                 }
             }
         } while (!valid); // IntelliJ says that "Condition '!valid' is always true.
