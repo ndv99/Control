@@ -1,18 +1,20 @@
 import java.util.Scanner;
 
-
 /**
  * Contains methods to create a menu with four options.
+ *
  * @author Nick De Villiers
  * @version 1.0
  */
 public class Menu {
+    // All methods in this class (except main) are private, since there is no need for them to be public.
 
     /**
      * Main method. Creates an instance of Menu and calls processUserChoices.
+     *
      * @param args args
      */
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Menu menu = new Menu();
         menu.processUserChoices();
     }
@@ -20,7 +22,7 @@ public class Menu {
     /**
      * Displays the menu.
      */
-    private void displayMenu(){
+    private void displayMenu() {
         System.out.println("\nPlease select one of the following options:");
         System.out.println("\n1: Calculate grade from percentage");
         System.out.println("2: Number tool (Square, Cube, Root)");
@@ -34,16 +36,16 @@ public class Menu {
      * 2 - Takes them to a tool to show the square, cube, and root of every integer between a user-specified lower and upper bound.
      * 3 - Shows them the total, average, maximum, and minimum of a set of numbers given by the user.
      */
-    private void processUserChoices(){
+    private void processUserChoices() {
         boolean finished = false; // set to true when the user wants to exit to break the loop
         Scanner choiceScanner = new Scanner(System.in);
-        while(!finished) { // keeps going while the user hasn't chosen to exit
+        while (!finished) { // keeps going while the user hasn't chosen to exit
             displayMenu();
             String userChoice = choiceScanner.nextLine();
             switch (userChoice) { // Originally wrote an 'if' but IntelliJ said to use a 'switch' here.
                 case "1": // User chooses option 1
                     int markInt = Choice.checkPercentage();
-                    if (markInt == -1){ // -1 value indicates three failed attempts to enter a valid number.
+                    if (markInt == -1) { // -1 value indicates three failed attempts to enter a valid number.
                         System.out.println("You have entered an invalid number three times. Aborting to main menu.");
                         break;
                     } else {
@@ -65,7 +67,7 @@ public class Menu {
                         int upperBound = Integer.parseInt(intInputScanner.nextLine());
 
                         validInput = Choice.numberRangeInformation(lowerBound, upperBound);
-                        if (!validInput){ // Catches an invalid input.
+                        if (!validInput) { // Catches an invalid input.
                             System.out.println("That input is invalid, please try again.");
                         }
                     }
