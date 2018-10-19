@@ -6,8 +6,10 @@ import java.util.Scanner;
  * @author Nick De Villiers
  * @version 1.0
  */
+// All methods in this class and are package-private, since there is no need for them to be public.
+// The class itself is also package-private, for the same reason.
 class Choice {
-    // All methods in this class are package-private, since there is no need for them to be public.
+
     /**
      * Calculates a grade from a user input (percentage) according to these grade boundaries:
      * A: >69
