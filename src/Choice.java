@@ -144,7 +144,7 @@ class Choice {
                 try {
                     markInt = Integer.parseInt(mark);
                     if (markInt <= 100 && markInt >= 0) {
-                        valid = true;
+                        valid = true; // loop will now break
                     } else {
                         System.out.println("That is not valid. Please enter your mark (percentage):");
                         failedAttempts += 1;
