@@ -1,7 +1,10 @@
 import java.util.Scanner;
 
+
 /**
  * Contains methods to create a menu with four options.
+ * @author Nick De Villiers
+ * @version 1.0
  */
 public class Menu {
 

@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 /**
  * Contains static methods for menu options.
+ * @author Nick De Villiers
+ * @version 1.0
  */
 class Choice {
 
