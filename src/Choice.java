@@ -7,7 +7,7 @@ import java.util.Scanner;
  * @version 1.0
  */
 class Choice {
-
+    // All methods in this class are package-private, since there is no need for them to be public.
     /**
      * Calculates a grade from a user input (percentage) according to these grade boundaries:
      * A: >69
@@ -18,6 +18,8 @@ class Choice {
      *
      * @param markInt Integer of the percentage given by the user.
      */
+
+
     static void calculateGrade(int markInt) {
 
         // numbers are basically grade boundaries.

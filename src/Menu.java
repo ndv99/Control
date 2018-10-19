@@ -7,6 +7,7 @@ import java.util.Scanner;
  * @version 1.0
  */
 public class Menu {
+    // All methods in this class (except main) are private, since there is no need for them to be public.
 
     /**
      * Main method. Creates an instance of Menu and calls processUserChoices.
