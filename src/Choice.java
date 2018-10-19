@@ -88,20 +88,27 @@ class Choice {
 
         Scanner markScanner = new Scanner(System.in);
         boolean valid = false;
+        int failedAttempts = 0;
         int markInt = -1;
         do{
-            System.out.println("Please enter your mark (percentage): ");
-            String mark = markScanner.nextLine();
-            try {
-                markInt = Integer.parseInt(mark);
-                if (markInt <= 100 && markInt >= 0) {
-                    valid = true;
-                    return markInt;
-                } else {
+            if (failedAttempts > 2){
+                break;
+            } else {
+                System.out.println("Please enter your mark (percentage): ");
+                String mark = markScanner.nextLine();
+                try {
+                    markInt = Integer.parseInt(mark);
+                    if (markInt <= 100 && markInt >= 0) {
+                        valid = true;
+                        return markInt;
+                    } else {
+                        System.out.println("That is not valid. Please enter your mark (percentage):");
+                        failedAttempts += 1;
+                    }
+                } catch(NumberFormatException e) {
                     System.out.println("That is not valid. Please enter your mark (percentage):");
+                    failedAttempts += 1;
                 }
-            } catch(NumberFormatException e){
-                System.out.println("That is not valid. Please enter your mark (percentage):");
             }
         } while (!valid); // IntelliJ says that "Condition '!valid' is always true.
                           // It is not always true.

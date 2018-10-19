@@ -26,7 +26,12 @@ public class Menu {
             switch (userChoice) {
                 case "1":
                     int markInt = Choice.checkPercentage();
-                    Choice.calculateGrade(markInt);
+                    if (markInt == -1){
+                        System.out.println("You have entered an invalid number three times. Aborting to main menu.");
+                        break;
+                    } else {
+                        Choice.calculateGrade(markInt);
+                    }
                     break;
                 case "2":
                     boolean validInput = false;
